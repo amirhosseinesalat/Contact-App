@@ -1,16 +1,35 @@
-# React + Vite
+# Contacts App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **React** project to manage your contacts.  
+You can add, view, and delete contacts with name, phone number, and email.  
+This is my **first React project**, built with **useState** and **props** 💙
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add new contact
+- Delete contact
+- Responsive design
+- Built with React (useState & props)
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+اپ مخاطبین
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+یک پروژه‌ی ساده با React برای مدیریت مخاطبین.
+در این برنامه می‌تونی نام، شماره و ایمیل وارد کنی، مخاطب اضافه یا حذف کنی.
+اولین پروژه‌ی من با React هست و در اون از useState و props استفاده شده 💪
+
+ویژگی‌ها
+
+افزودن مخاطب جدید
+
+حذف مخاطب
+
+طراحی واکنش‌گرا
+
+استفاده از props و useState در کامپوننت‌ها
+```
