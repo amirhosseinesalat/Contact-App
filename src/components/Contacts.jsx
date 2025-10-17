@@ -2,10 +2,12 @@ import { useState } from "react";
 import styles from "./Contacts.module.css";
 import ContactList from "./ContactList";
 import inputs from "../constants/input";
+import { v4 } from "uuid";
 function Contacts() {
   const [contacts, setContacts] = useState([]);
   const [alert, setAlert] = useState("");
   const [contact, setContact] = useState({
+    id: "",
     name: "",
     lastName: "",
     email: "",
@@ -29,9 +31,8 @@ function Contacts() {
       return;
     }
     setAlert("");
-    setContacts((contacts) => [...contacts, contact]);
-
-    console.log(contacts);
+    const newContact = { ...contact, id: v4() };
+    setContacts((contacts) => [...contacts, newContact]);
     setContact({
       name: "",
       lastName: "",
@@ -39,9 +40,13 @@ function Contacts() {
       phone: "",
     });
   }
+  function deleteHandler(id) {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    setContacts(newContacts);
+  }
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.form}>
         {inputs.map((input, index) => (
           <input
             key={index}
@@ -54,8 +59,8 @@ function Contacts() {
         ))}
         <button onClick={addHandler}>Add contact</button>
       </div>
-      <div>{alert && <p>{alert}</p>}</div>
-      <ContactList contacts={contacts} />
+      <div className={styles.alert}>{alert && <p>{alert}</p>}</div>
+      <ContactList contacts={contacts} deleteHandler={deleteHandler} />
     </div>
   );
 }
